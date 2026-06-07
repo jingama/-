@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KR Stock Token Board · trade.xyz</title>
+<title>이대리의 이대론 안돼 · KR Stock Token Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -25,27 +25,14 @@
   --sans:    'Noto Sans KR', sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 14px;
-  min-height: 100vh;
-}
+html, body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 14px; min-height: 100vh; }
 body::before {
-  content: '';
-  position: fixed; inset: 0;
+  content: ''; position: fixed; inset: 0;
   background: repeating-linear-gradient(to bottom, transparent 0, transparent 3px, rgba(0,0,0,.06) 3px, rgba(0,0,0,.06) 4px);
-  pointer-events: none;
-  z-index: 9999;
+  pointer-events: none; z-index: 9999;
 }
 .shell { max-width: 1000px; margin: 0 auto; padding: 24px 20px 60px; }
-.topbar {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 10px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 16px; margin-bottom: 20px;
-}
+.topbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; }
 .logo-group { display: flex; align-items: baseline; gap: 10px; }
 .logo { font-family: var(--mono); font-size: 18px; font-weight: 600; color: var(--accent); }
 .logo-sub { font-family: var(--mono); font-size: 11px; color: var(--text3); letter-spacing: .15em; text-transform: uppercase; }
@@ -56,129 +43,63 @@ body::before {
 .pulse.error { background: var(--down); }
 @keyframes blink { 0%,100%{opacity:1;box-shadow:0 0 6px var(--up)} 50%{opacity:.3;box-shadow:none} }
 .clock { font-family: var(--mono); font-size: 12px; color: var(--text3); }
-.setup-banner {
-  background: rgba(0,229,255,.05);
-  border: 1px solid rgba(0,229,255,.2);
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin-bottom: 20px;
-  display: none;
-}
-.setup-banner.show { display: block; }
-.setup-title { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 10px; }
-.setup-input-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.setup-input {
-  flex: 1; min-width: 260px;
-  background: var(--bg3); border: 1px solid var(--border2);
-  border-radius: 5px; padding: 8px 12px;
-  font-family: var(--mono); font-size: 12px; color: var(--text);
-  outline: none;
-}
-.setup-input:focus { border-color: var(--accent2); }
-.setup-input::placeholder { color: var(--text3); }
-.setup-btn {
-  background: var(--accent2); border: none; border-radius: 5px;
-  padding: 8px 16px; font-family: var(--mono); font-size: 12px;
-  color: var(--bg); cursor: pointer; font-weight: 600;
-}
-.setup-btn:hover { background: var(--accent); }
-.fx-strip {
-  display: flex; margin-bottom: 16px;
-  background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
-}
+.fx-strip { display: flex; margin-bottom: 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
 .fx-cell { flex: 1; padding: 12px 16px; border-right: 1px solid var(--border); }
 .fx-cell:last-child { border-right: none; }
 .fx-label { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
 .fx-value { font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--accent); }
-.fx-sub   { font-size: 11px; color: var(--text2); margin-top: 2px; }
-.session-box {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr));
-  gap: 0; margin-bottom: 16px;
-  background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
-}
+.fx-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.session-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 0; margin-bottom: 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
 .sess-cell { padding: 10px 16px; border-right: 1px solid var(--border); }
 .sess-cell:last-child { border-right: none; }
 .sess-label { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
-.sess-val   { font-family: var(--mono); font-size: 12px; color: var(--text2); }
-.sess-val.active   { color: var(--up); }
+.sess-val { font-family: var(--mono); font-size: 12px; color: var(--text2); }
+.sess-val.active { color: var(--up); }
 .sess-val.inactive { color: var(--text3); }
-.err-box {
-  background: rgba(255,77,106,.07); border: 1px solid rgba(255,77,106,.3);
-  border-radius: 6px; padding: 10px 14px;
-  font-size: 12px; color: var(--down); margin-bottom: 14px;
-  font-family: var(--mono); line-height: 1.6; display: none;
-}
+.err-box { background: rgba(255,77,106,.07); border: 1px solid rgba(255,77,106,.3); border-radius: 6px; padding: 10px 14px; font-size: 12px; color: var(--down); margin-bottom: 14px; font-family: var(--mono); line-height: 1.6; display: none; }
 .err-box.show { display: block; }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
-  gap: 12px; margin-bottom: 16px;
-}
-.card {
-  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px;
-  padding: 16px; position: relative; overflow: hidden;
-  transition: border-color .2s, transform .15s;
-}
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 12px; margin-bottom: 16px; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; position: relative; overflow: hidden; transition: border-color .2s, transform .15s; }
 .card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:var(--border2); transition:background .4s; }
-.card.flash-up::before   { background: var(--up); }
+.card.flash-up::before { background: var(--up); }
 .card.flash-down::before { background: var(--down); }
 .card:hover { border-color: var(--border2); transform: translateY(-1px); }
 .c-ticker { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--accent2); letter-spacing: .1em; margin-bottom: 2px; }
-.c-name   { font-size: 11px; color: var(--text3); margin-bottom: 12px; }
-.c-usd    { font-family: var(--mono); font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-.c-krw    { font-family: var(--mono); font-size: 14px; color: var(--accent); margin-bottom: 8px; }
-.c-chg    { font-family: var(--mono); font-size: 12px; font-weight: 500; }
-.c-chg.up   { color: var(--up); }
+.c-name { font-size: 11px; color: var(--text3); margin-bottom: 12px; }
+.c-usd { font-family: var(--mono); font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.c-krw { font-family: var(--mono); font-size: 14px; color: var(--accent); margin-bottom: 8px; }
+.c-chg { font-family: var(--mono); font-size: 12px; font-weight: 500; }
+.c-chg.up { color: var(--up); }
 .c-chg.down { color: var(--down); }
 .c-chg.flat { color: var(--text3); }
 .c-krx { position:absolute; bottom:12px; right:14px; font-family:var(--mono); font-size:10px; color:var(--text3); }
-.table-wrap {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: 8px; overflow: hidden; margin-bottom: 16px;
-}
-.tbl-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 16px; border-bottom: 1px solid var(--border);
-}
+.table-wrap { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+.tbl-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); }
 .tbl-title { font-family: var(--mono); font-size: 11px; color: var(--text3); letter-spacing: .12em; text-transform: uppercase; }
-.src-link  { font-family: var(--mono); font-size: 11px; color: var(--accent2); text-decoration: none; }
+.src-link { font-family: var(--mono); font-size: 11px; color: var(--accent2); text-decoration: none; }
 .src-link:hover { color: var(--accent); }
 table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 13px; }
 thead tr { background: var(--bg3); }
-th {
-  padding: 9px 16px; text-align: left;
-  font-size: 10px; font-weight: 500; color: var(--text3);
-  letter-spacing: .1em; text-transform: uppercase;
-  border-bottom: 1px solid var(--border);
-}
+th { padding: 9px 16px; text-align: left; font-size: 10px; font-weight: 500; color: var(--text3); letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
 td { padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--text); }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: var(--bg3); }
 .td-ticker { color: var(--accent2); font-weight: 500; }
-.td-name   { color: var(--text2); font-size: 12px; font-family: var(--sans); }
-.td-r      { text-align: right; }
-.td-krw    { color: var(--accent); }
-.td-chg.up   { color: var(--up); }
+.td-name { color: var(--text2); font-size: 12px; font-family: var(--sans); }
+.td-r { text-align: right; }
+.td-krw { color: var(--accent); }
+.td-chg.up { color: var(--up); }
 .td-chg.down { color: var(--down); }
 .td-chg.flat { color: var(--text3); }
-.td-krx    { color: var(--text3); font-size: 11px; }
+.td-krx { color: var(--text3); font-size: 11px; }
 .footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
-.btn {
-  font-family: var(--mono); font-size: 12px; color: var(--text2);
-  background: var(--bg2); border: 1px solid var(--border2); border-radius: 5px;
-  padding: 7px 14px; cursor: pointer;
-  display: flex; align-items: center; gap: 6px;
-  transition: color .15s, border-color .15s, background .15s;
-}
+.btn { font-family: var(--mono); font-size: 12px; color: var(--text2); background: var(--bg2); border: 1px solid var(--border2); border-radius: 5px; padding: 7px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: color .15s, border-color .15s, background .15s; }
 .btn:hover { color: var(--accent); border-color: var(--accent2); background: rgba(0,229,255,.05); }
 .btn:active { transform: scale(.98); }
 .auto-status { font-family: var(--mono); font-size: 11px; color: var(--text3); }
-.skel {
-  background: linear-gradient(90deg, var(--border) 25%, var(--border2) 50%, var(--border) 75%);
-  background-size: 200% 100%;
-  animation: skel 1.4s infinite; border-radius: 3px; display: inline-block;
-}
+.disclaimer { margin-top: 28px; padding: 14px 18px; background: rgba(245,166,35,0.07); border: 1px solid rgba(245,166,35,0.25); border-radius: 8px; font-family: var(--mono); font-size: 11px; color: var(--warn); line-height: 1.9; }
+.skel { background: linear-gradient(90deg, var(--border) 25%, var(--border2) 50%, var(--border) 75%); background-size: 200% 100%; animation: skel 1.4s infinite; border-radius: 3px; display: inline-block; }
 @keyframes skel { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 @media (max-width: 640px) {
   .cards { grid-template-columns: 1fr 1fr; }
@@ -197,8 +118,8 @@ tr:hover td { background: var(--bg3); }
 
   <div class="topbar">
     <div class="logo-group">
-      <span class="logo">trade[XYZ]</span>
-      <span class="logo-sub">KR Stock Token Board</span>
+      <span class="logo">이대리의 이대론 안돼</span>
+      <span class="logo-sub">KR STOCK TOKEN BOARD</span>
     </div>
     <div class="topbar-right">
       <div class="live-badge">
@@ -209,26 +130,11 @@ tr:hover td { background: var(--bg3); }
     </div>
   </div>
 
-  <div class="setup-banner" id="setup-banner">
-    <div class="setup-title">⚙ Cloudflare Workers 프록시 URL 설정</div>
-    <div class="setup-input-row">
-      <input class="setup-input" id="proxy-input" type="text"
-        placeholder="https://blue-dust-9aec.ckrhcks12.workers.dev"
-        autocomplete="off" spellcheck="false" />
-      <button class="setup-btn" onclick="saveProxy()">저장 &amp; 연결</button>
-    </div>
-  </div>
-
   <div class="fx-strip">
     <div class="fx-cell">
       <div class="fx-label">USD / KRW</div>
       <div class="fx-value" id="fx-rate">—</div>
       <div class="fx-sub">실시간 환율</div>
-    </div>
-    <div class="fx-cell">
-      <div class="fx-label">프록시</div>
-      <div class="fx-value" id="proxy-display" style="font-size:12px;color:var(--text2)">연결 중...</div>
-      <div class="fx-sub">Cloudflare Workers</div>
     </div>
     <div class="fx-cell">
       <div class="fx-label">마지막 갱신</div>
@@ -299,6 +205,11 @@ tr:hover td { background: var(--bg3); }
     <span class="auto-status" id="auto-status">● 30초 자동 갱신 활성</span>
   </div>
 
+  <div class="disclaimer">
+    ⚠ 본 가격은 장외 참고용으로 사용해주세요.<br>
+    특히 본 주식장이 시작되는 경우에 가격변동이 클 수 있으니 유의 바랍니다.
+  </div>
+
 </div>
 
 <script>
@@ -309,9 +220,7 @@ const TICKERS = [
   { symbol: 'EWY',     name: 'iShares MSCI Korea ETF', krx: 'EWY'   },
 ];
 const INTERVAL = 30000;
-
-// ★ Workers URL 고정 ★
-let proxyUrl = 'https://blue-dust-9aec.ckrhcks12.workers.dev';
+const PROXY    = 'https://blue-dust-9aec.ckrhcks12.workers.dev';
 
 let prices     = {};
 let prevPrices = {};
@@ -320,7 +229,6 @@ let autoTimer  = null;
 let autoOn     = true;
 
 (function init() {
-  updateProxyDisplay();
   fetchAll();
   setInterval(tickClock, 1000);
   autoTimer = setInterval(fetchAll, INTERVAL);
@@ -351,26 +259,6 @@ function renderSession() {
   se.className   = 'sess-val ' + (s.active ? 'active' : 'inactive');
   pm.textContent = s.mode + ' Pricing';
   pm.className   = 'sess-val ' + (s.active ? 'active' : 'inactive');
-}
-
-function saveProxy() {
-  const v = document.getElementById('proxy-input').value.trim().replace(/\/$/, '');
-  if (!v.startsWith('https://')) { alert('https:// 로 시작하는 URL을 입력하세요'); return; }
-  proxyUrl = v;
-  document.getElementById('setup-banner').classList.remove('show');
-  updateProxyDisplay();
-  fetchAll();
-}
-
-function updateProxyDisplay() {
-  const el = document.getElementById('proxy-display');
-  try {
-    el.textContent = new URL(proxyUrl).hostname;
-    el.style.color = 'var(--up)';
-  } catch {
-    el.textContent = '미설정';
-    el.style.color = 'var(--text2)';
-  }
 }
 
 function setStatus(state, text) {
@@ -404,7 +292,7 @@ function chgArrow(p) { return p === null ? '' : p > 0 ? '▲ ' : p < 0 ? '▼ ' 
 
 async function fetchFx() {
   try {
-    const r = await fetch(proxyUrl + '/fx');
+    const r = await fetch(PROXY + '/fx');
     if (!r.ok) throw 0;
     const d = await r.json();
     return d.rates?.KRW || null;
@@ -418,7 +306,7 @@ async function fetchFx() {
 }
 
 async function fetchHL() {
-  const r = await fetch(proxyUrl + '/hl', {
+  const r = await fetch(PROXY + '/hl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ type: 'allMids', dex: 'xyz' }),
@@ -428,29 +316,34 @@ async function fetchHL() {
 }
 
 async function fetchAll() {
-  if (!proxyUrl) return;
   setStatus('', '갱신 중...');
   showErr(null);
   try {
     const [mids, newFx] = await Promise.all([fetchHL(), fetchFx()]);
     if (newFx) fxRate = newFx;
+
     const next = {};
     TICKERS.forEach(t => {
       const v = mids[t.symbol] || mids['xyz:' + t.symbol];
       if (v) next[t.symbol] = parseFloat(v);
     });
+
     TICKERS.forEach(t => {
       const p = next[t.symbol], pp = prices[t.symbol];
       if (p && pp && p !== pp) flash(t.symbol, p - pp);
     });
+
     prevPrices = { ...prices };
     prices = next;
+
     document.getElementById('fx-rate').textContent =
       fxRate ? fxRate.toLocaleString('ko-KR', { maximumFractionDigits: 1 }) + ' KRW' : '환율 불가';
     document.getElementById('last-update').textContent =
       new Date().toLocaleTimeString('ko-KR', { hour12: false });
+
     renderCards();
     renderTable();
+
     const found = Object.values(prices).filter(Boolean).length;
     if (found === 0) {
       setStatus('error', 'XYZ 종목 없음');
@@ -532,10 +425,6 @@ function toggleAuto() {
     lbl.textContent = '● 30초 자동 갱신 활성';
   }
 }
-
-document.getElementById('proxy-input').addEventListener('keydown', e => {
-  if (e.key === 'Enter') saveProxy();
-});
 </script>
 </body>
 </html>
