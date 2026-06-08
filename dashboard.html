@@ -401,7 +401,12 @@ const fu=n=>!n?'—':'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maxim
 const fk=u=>!fxRate||!u?'—':Math.round(u*fxRate).toLocaleString('ko-KR')+'원';
 const fd=k=>!k?'—':Math.round(k).toLocaleString('ko-KR')+'원';
 const pc=(c,p)=>(!c||!p)?null:(c-p)/p*100;
-const cc=p=>p===null?'flat':p>0?'up':p<0?'down':'flat';
+function tokenChg(sym){
+  const kd=krxPrices[sym];
+  if(kd?.chgPct!=null) return kd.chgPct;
+  const u=tokenPrices[sym],p=prevToken[sym];
+  return(!u||!p)?null:(u-p)/p*100;
+}const cc=p=>p===null?'flat':p>0?'up':p<0?'down':'flat';
 const cs=p=>p===null?'—':(p>=0?'+':'')+p.toFixed(2)+'%';
 const ar=p=>p===null?'':p>0?'▲':p<0?'▼':'';
 function calcGap(tu,kp,usd){
