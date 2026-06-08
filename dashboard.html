@@ -308,50 +308,50 @@ canvas#priceChart{width:100%!important;height:100%!important}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 const ALL_TICKERS = [
-  { symbol:'SKHX',    name:'SK하이닉스',         krx:'000660', usd:false, groups:['pinned','korea'] },
-  { symbol:'SMSN',    name:'삼성전자',           krx:'005930', usd:false, groups:['pinned','korea'] },
-  { symbol:'HYUNDAI', name:'현대자동차',         krx:'005380', usd:false, groups:['pinned','korea'] },
-  { symbol:'KR200',   name:'코스피200',          krx:'KR200',  usd:false, groups:['pinned','korea','etf'] },
-  { symbol:'EWY',     name:'Korea ETF',          krx:'EWY',    usd:true,  groups:['korea','etf'] },
-  { symbol:'SOXL',    name:'반도체 3x ETF',      krx:'SOXL',   usd:true,  groups:['semicon','etf'] },
-  { symbol:'NVDA',    name:'엔비디아',           krx:'NVDA',   usd:true,  groups:['semicon'] },
-  { symbol:'MU',      name:'마이크론',           krx:'MU',     usd:true,  groups:['semicon'] },
-  { symbol:'AMD',     name:'AMD',                krx:'AMD',    usd:true,  groups:['semicon'] },
-  { symbol:'INTC',    name:'인텔',              krx:'INTC',   usd:true,  groups:['semicon'] },
-  { symbol:'TSM',     name:'TSMC',              krx:'TSM',    usd:true,  groups:['semicon'] },
-  { symbol:'ASML',    name:'ASML',              krx:'ASML',   usd:true,  groups:['semicon'] },
-  { symbol:'AVGO',    name:'브로드컴',           krx:'AVGO',   usd:true,  groups:['semicon'] },
-  { symbol:'MRVL',    name:'마벨테크',           krx:'MRVL',   usd:true,  groups:['semicon'] },
-  { symbol:'SNDK',    name:'샌디스크',           krx:'SNDK',   usd:true,  groups:['semicon'] },
-  { symbol:'DRAM',    name:'Memory ETF',         krx:'DRAM',   usd:true,  groups:['semicon','etf'] },
-  { symbol:'AAPL',    name:'애플',              krx:'AAPL',   usd:true,  groups:['bigtech'] },
-  { symbol:'MSFT',    name:'마이크로소프트',      krx:'MSFT',   usd:true,  groups:['bigtech'] },
-  { symbol:'META',    name:'메타',              krx:'META',   usd:true,  groups:['bigtech'] },
-  { symbol:'AMZN',    name:'아마존',            krx:'AMZN',   usd:true,  groups:['bigtech'] },
-  { symbol:'GOOGL',   name:'알파벳(구글)',       krx:'GOOGL',  usd:true,  groups:['bigtech'] },
-  { symbol:'NFLX',    name:'넷플릭스',           krx:'NFLX',   usd:true,  groups:['bigtech'] },
-  { symbol:'TSLA',    name:'테슬라',            krx:'TSLA',   usd:true,  groups:['bigtech','ai'] },
-  { symbol:'ORCL',    name:'오라클',            krx:'ORCL',   usd:true,  groups:['bigtech'] },
-  { symbol:'BABA',    name:'알리바바',          krx:'BABA',   usd:true,  groups:['bigtech'] },
-  { symbol:'CBRS',    name:'세레브라스',         krx:'CBRS',   usd:true,  groups:['ai'] },
-  { symbol:'CRWV',    name:'CoreWeave',         krx:'CRWV',   usd:true,  groups:['ai'] },
-  { symbol:'PLTR',    name:'팔란티어',           krx:'PLTR',   usd:true,  groups:['ai'] },
-  { symbol:'RKLB',    name:'로켓랩',            krx:'RKLB',   usd:true,  groups:['ai'] },
-  { symbol:'ARM',     name:'ARM홀딩스',          krx:'ARM',    usd:true,  groups:['ai','semicon'] },
-  { symbol:'MSTR',    name:'스트래티지',         krx:'MSTR',   usd:true,  groups:['ai'] },
-  { symbol:'COIN',    name:'코인베이스',         krx:'COIN',   usd:true,  groups:['ai'] },
-  { symbol:'HOOD',    name:'로빈후드',           krx:'HOOD',   usd:true,  groups:['ai'] },
-  { symbol:'SP500',   name:'S&P 500',           krx:'SPY',    usd:true,  groups:['etf'] },
-  { symbol:'XYZ100',  name:'나스닥100',          krx:'QQQ',    usd:true,  groups:['etf'] },
-  { symbol:'EWJ',     name:'Japan ETF',         krx:'EWJ',    usd:true,  groups:['etf'] },
-  { symbol:'EWT',     name:'Taiwan ETF',        krx:'EWT',    usd:true,  groups:['etf'] },
-  { symbol:'EWZ',     name:'Brazil ETF',        krx:'EWZ',    usd:true,  groups:['etf'] },
-  { symbol:'URNM',    name:'우라늄 ETF',         krx:'URNM',   usd:true,  groups:['etf'] },
-  { symbol:'XLE',     name:'에너지 ETF',         krx:'XLE',    usd:true,  groups:['etf','commodity'] },
-  { symbol:'GOLD',    name:'금 (Gold)',          krx:'GLD',    usd:true,  groups:['commodity'] },
-  { symbol:'SILVER',  name:'은 (Silver)',        krx:'SLV',    usd:true,  groups:['commodity'] },
-  { symbol:'BRENTOIL',name:'브렌트유',          krx:'BNO',    usd:true,  groups:['commodity'] },
-  { symbol:'WTIOIL',  name:'WTI유',            krx:'USO',    usd:true,  groups:['commodity'] },
+  { symbol:'SKHX',    name:'SK하이닉스',        krx:'000660', usd:false, groups:['pinned','korea'] },
+  { symbol:'SMSN',    name:'삼성전자',          krx:'005930', usd:false, groups:['pinned','korea'] },
+  { symbol:'HYUNDAI', name:'현대자동차',        krx:'005380', usd:false, groups:['pinned','korea'] },
+  { symbol:'KR200',   name:'코스피200',         krx:'KR200',  usd:false, groups:['pinned','korea','etf'] },
+  { symbol:'EWY',     name:'Korea ETF',         krx:'EWY',    usd:true,  groups:['korea','etf'] },
+  { symbol:'SOXL',    name:'반도체 3x ETF',     krx:'SOXL',   usd:true,  groups:['semicon','etf'] },
+  { symbol:'NVDA',    name:'엔비디아',          krx:'NVDA',   usd:true,  groups:['semicon'] },
+  { symbol:'MU',      name:'마이크론',          krx:'MU',     usd:true,  groups:['semicon'] },
+  { symbol:'AMD',     name:'AMD',               krx:'AMD',    usd:true,  groups:['semicon'] },
+  { symbol:'INTC',    name:'인텔',             krx:'INTC',   usd:true,  groups:['semicon'] },
+  { symbol:'TSM',     name:'TSMC',             krx:'TSM',    usd:true,  groups:['semicon'] },
+  { symbol:'ASML',    name:'ASML',             krx:'ASML',   usd:true,  groups:['semicon'] },
+  { symbol:'AVGO',    name:'브로드컴',          krx:'AVGO',   usd:true,  groups:['semicon'] },
+  { symbol:'MRVL',    name:'마벨테크',          krx:'MRVL',   usd:true,  groups:['semicon'] },
+  { symbol:'SNDK',    name:'샌디스크',          krx:'SNDK',   usd:true,  groups:['semicon'] },
+  { symbol:'DRAM',    name:'Memory ETF',        krx:'DRAM',   usd:true,  groups:['semicon','etf'] },
+  { symbol:'AAPL',    name:'애플',             krx:'AAPL',   usd:true,  groups:['bigtech'] },
+  { symbol:'MSFT',    name:'마이크로소프트',     krx:'MSFT',   usd:true,  groups:['bigtech'] },
+  { symbol:'META',    name:'메타',             krx:'META',   usd:true,  groups:['bigtech'] },
+  { symbol:'AMZN',    name:'아마존',           krx:'AMZN',   usd:true,  groups:['bigtech'] },
+  { symbol:'GOOGL',   name:'알파벳(구글)',      krx:'GOOGL',  usd:true,  groups:['bigtech'] },
+  { symbol:'NFLX',    name:'넷플릭스',          krx:'NFLX',   usd:true,  groups:['bigtech'] },
+  { symbol:'TSLA',    name:'테슬라',           krx:'TSLA',   usd:true,  groups:['bigtech','ai'] },
+  { symbol:'ORCL',    name:'오라클',           krx:'ORCL',   usd:true,  groups:['bigtech'] },
+  { symbol:'BABA',    name:'알리바바',         krx:'BABA',   usd:true,  groups:['bigtech'] },
+  { symbol:'CBRS',    name:'세레브라스',        krx:'CBRS',   usd:true,  groups:['ai'] },
+  { symbol:'CRWV',    name:'CoreWeave',        krx:'CRWV',   usd:true,  groups:['ai'] },
+  { symbol:'PLTR',    name:'팔란티어',          krx:'PLTR',   usd:true,  groups:['ai'] },
+  { symbol:'RKLB',    name:'로켓랩',           krx:'RKLB',   usd:true,  groups:['ai'] },
+  { symbol:'ARM',     name:'ARM홀딩스',         krx:'ARM',    usd:true,  groups:['ai','semicon'] },
+  { symbol:'MSTR',    name:'스트래티지',        krx:'MSTR',   usd:true,  groups:['ai'] },
+  { symbol:'COIN',    name:'코인베이스',        krx:'COIN',   usd:true,  groups:['ai'] },
+  { symbol:'HOOD',    name:'로빈후드',          krx:'HOOD',   usd:true,  groups:['ai'] },
+  { symbol:'SP500',   name:'S&P 500',          krx:'SPY',    usd:true,  groups:['etf'] },
+  { symbol:'XYZ100',  name:'나스닥100',         krx:'QQQ',    usd:true,  groups:['etf'] },
+  { symbol:'EWJ',     name:'Japan ETF',        krx:'EWJ',    usd:true,  groups:['etf'] },
+  { symbol:'EWT',     name:'Taiwan ETF',       krx:'EWT',    usd:true,  groups:['etf'] },
+  { symbol:'EWZ',     name:'Brazil ETF',       krx:'EWZ',    usd:true,  groups:['etf'] },
+  { symbol:'URNM',    name:'우라늄 ETF',        krx:'URNM',   usd:true,  groups:['etf'] },
+  { symbol:'XLE',     name:'에너지 ETF',        krx:'XLE',    usd:true,  groups:['etf','commodity'] },
+  { symbol:'GOLD',    name:'금 (Gold)',         krx:'GLD',    usd:true,  groups:['commodity'] },
+  { symbol:'SILVER',  name:'은 (Silver)',       krx:'SLV',    usd:true,  groups:['commodity'] },
+  { symbol:'BRENTOIL',name:'브렌트유',         krx:'BNO',    usd:true,  groups:['commodity'] },
+  { symbol:'WTIOIL',  name:'WTI유',           krx:'USO',    usd:true,  groups:['commodity'] },
 ];
 
 const PROXY='https://blue-dust-9aec.ckrhcks12.workers.dev';
@@ -397,16 +397,21 @@ function showErr(msg){
   const el=document.getElementById('err-box');
   if(msg){el.textContent='⚠ '+msg;el.classList.add('show');}else el.classList.remove('show');
 }
+
 const fu=n=>!n?'—':'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const fk=u=>!fxRate||!u?'—':Math.round(u*fxRate).toLocaleString('ko-KR')+'원';
 const fd=k=>!k?'—':Math.round(k).toLocaleString('ko-KR')+'원';
 const pc=(c,p)=>(!c||!p)?null:(c-p)/p*100;
+
+/* ★ 전일 대비 등락률 — Yahoo Finance chgPct 우선 사용 */
 function tokenChg(sym){
   const kd=krxPrices[sym];
   if(kd?.chgPct!=null) return kd.chgPct;
   const u=tokenPrices[sym],p=prevToken[sym];
   return(!u||!p)?null:(u-p)/p*100;
-}const cc=p=>p===null?'flat':p>0?'up':p<0?'down':'flat';
+}
+
+const cc=p=>p===null?'flat':p>0?'up':p<0?'down':'flat';
 const cs=p=>p===null?'—':(p>=0?'+':'')+p.toFixed(2)+'%';
 const ar=p=>p===null?'':p>0?'▲':p<0?'▼':'';
 function calcGap(tu,kp,usd){
@@ -428,6 +433,7 @@ async function fetchHL(){
 async function fetchKRX(){
   try{const r=await fetch(PROXY+'/krx');if(!r.ok)return{};return r.json();}catch{return{};}
 }
+
 async function fetchAll(){
   setStatus('','갱신');showErr(null);
   try{
@@ -454,24 +460,29 @@ async function fetchAll(){
     if(chartSym)updateModalPrice(chartSym);
   }catch(e){setStatus('error','오류');showErr('프록시 오류: '+e.message);}
 }
+
 function setGroup(g){
   currentGroup=g;
   document.querySelectorAll('.f-tab').forEach(b=>b.classList.toggle('active',b.dataset.group===g));
   renderCards();renderTable();
 }
 function visible(){return currentGroup==='all'?ALL_TICKERS:ALL_TICKERS.filter(t=>t.groups.includes(currentGroup));}
+
 function renderTape(){
   const tape=document.getElementById('tape');
   const html=ALL_TICKERS.map(t=>{
-    const u=tokenPrices[t.symbol],p=pc(u,prevToken[t.symbol]),cl=cc(p);
+    const u=tokenPrices[t.symbol],p=tokenChg(t.symbol),cl=cc(p);
     return`<span class="tape-item" onclick="openChart('${t.symbol}')"><span class="t-sym">${t.symbol}</span><span class="t-price">${fu(u)}</span><span class="t-chg ${cl}">${ar(p)}${cs(p)}</span></span>`;
   }).join('');
   tape.innerHTML=html+html;
 }
+
 function renderCards(){
   const area=document.getElementById('cards');area.innerHTML='';
   visible().forEach(t=>{
-    const tu=tokenPrices[t.symbol],tp=pc(tu,prevToken[t.symbol]),tcl=cc(tp);
+    const tu=tokenPrices[t.symbol];
+    const tp=tokenChg(t.symbol);  /* ★ 전일 대비 */
+    const tcl=cc(tp);
     const kd=krxPrices[t.symbol],kp=kd?.price||null,kpc=kd?.chgPct||null,kcl=cc(kpc);
     const gap=calcGap(tu,kp,t.usd),gcl2=gc(gap);
     const d=document.createElement('div');
@@ -490,6 +501,7 @@ function renderCards(){
     area.appendChild(d);
   });
 }
+
 function renderTable(){
   const tbody=document.getElementById('tbody');if(!tbody)return;
   const list=visible();
@@ -498,7 +510,9 @@ function renderTable(){
   if(cnt)cnt.textContent=list.length+'종목';
   tbody.innerHTML='';
   list.forEach(t=>{
-    const tu=tokenPrices[t.symbol],tp=pc(tu,prevToken[t.symbol]),tcl=cc(tp);
+    const tu=tokenPrices[t.symbol];
+    const tp=tokenChg(t.symbol);  /* ★ 전일 대비 */
+    const tcl=cc(tp);
     const kd=krxPrices[t.symbol],kp=kd?.price||null,kpc=kd?.chgPct||null,kcl=cc(kpc);
     const gap=calcGap(tu,kp,t.usd),gcl2=gc(gap);
     const chgCl=tcl==='up'?'td-up':tcl==='down'?'td-down':'td-flat';
@@ -519,6 +533,7 @@ function renderTable(){
     tbody.appendChild(tr);
   });
 }
+
 function toggleDetail(){
   detailOpen=!detailOpen;
   const body=document.getElementById('detail-body'),arrow=document.getElementById('detail-arrow');
@@ -536,6 +551,7 @@ function toggleAuto(){
   if(autoOn){clearInterval(autoTimer);autoOn=false;btn.textContent='▶ 자동';lbl.textContent='○ 일시정지';}
   else{autoTimer=setInterval(fetchAll,INTERVAL);autoOn=true;btn.textContent='⏸ 자동';lbl.textContent='● 30초 갱신';}
 }
+
 function openChart(sym){
   chartSym=sym;chartRange='5d';
   const t=ALL_TICKERS.find(x=>x.symbol===sym);
@@ -549,7 +565,8 @@ function openChart(sym){
 }
 function updateModalPrice(sym){
   const t=ALL_TICKERS.find(x=>x.symbol===sym);
-  const tu=tokenPrices[sym],tp=pc(tu,prevToken[sym]);
+  const tu=tokenPrices[sym];
+  const tp=tokenChg(sym);  /* ★ 전일 대비 */
   const pe=document.getElementById('modal-price'),ke=document.getElementById('modal-price-krw'),ce=document.getElementById('modal-chg');
   if(pe)pe.textContent=fu(tu);
   if(ke)ke.textContent=t&&!t.usd?fk(tu):'';
@@ -638,9 +655,4 @@ function drawStats(data,sym){
     <div class="modal-stat"><div class="m-stat-label">고가</div><div class="m-stat-val up">${fmt(high)}</div></div>
     <div class="modal-stat"><div class="m-stat-label">저가</div><div class="m-stat-val down">${fmt(low)}</div></div>
     <div class="modal-stat"><div class="m-stat-label">시작가</div><div class="m-stat-val">${fmt(first)}</div></div>
-    <div class="modal-stat"><div class="m-stat-label">포인트</div><div class="m-stat-val" style="font-size:10px">${pts.length}개</div></div>
-  `;
-}
-</script>
-</body>
-</html>
+    <div class="modal-stat"><div class="m-stat-l
