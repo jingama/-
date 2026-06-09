@@ -20,7 +20,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{font-size:14px}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;min-height:100dvh;overflow-x:hidden}
-
 .header{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:calc(var(--safe-top) + 10px) 14px 10px}
 .header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .brand{display:flex;align-items:baseline;gap:6px}
@@ -40,7 +39,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .fx-pill-val{color:var(--text2);font-weight:500}
 .fx-pill-val.live{color:var(--accent)}
 .fx-sep{width:1px;height:10px;background:var(--border);margin:0 8px;flex-shrink:0}
-
 .tape{background:var(--bg1);border-bottom:1px solid var(--border);height:32px;overflow:hidden}
 .tape-track{display:flex;align-items:center;height:100%;white-space:nowrap;animation:scroll-left 80s linear infinite}
 .tape-track:hover{animation-play-state:paused}
@@ -50,20 +48,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .t-price{color:var(--text)}
 .t-chg.up{color:var(--up)}.t-chg.down{color:var(--down)}.t-chg.flat{color:var(--text3)}
 @keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
 .filter-wrap{background:var(--bg1);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
 .filter-wrap::-webkit-scrollbar{display:none}
 .filter-tabs{display:flex;padding:0 10px;min-width:max-content}
 .f-tab{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--text3);background:transparent;border:none;border-bottom:2px solid transparent;padding:8px 10px;cursor:pointer;white-space:nowrap;letter-spacing:.03em;transition:color .15s,border-color .15s}
 .f-tab:hover{color:var(--text2)}
 .f-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-
 .cards-section{padding:10px 10px 0}
 .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 @media(min-width:480px){.cards-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:720px){.cards-grid{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:960px){.cards-grid{grid-template-columns:repeat(5,1fr)}}
-
 .card{background:var(--bg1);border:1px solid var(--border);border-radius:4px;padding:10px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .15s,background .15s;-webkit-user-select:none;user-select:none}
 .card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--border2);transition:background .3s}
 .card.flash-up::after{background:var(--up)}
@@ -87,13 +82,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .c-gap-label{font-family:var(--mono);font-size:8px;color:var(--text3);letter-spacing:.06em;text-transform:uppercase}
 .c-gap-val{font-family:var(--mono);font-size:11px;font-weight:600}
 .c-gap-val.pos{color:var(--up)}.c-gap-val.neg{color:var(--down)}.c-gap-val.zero{color:var(--text3)}
-
 .detail-toggle{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-top:10px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;background:var(--bg1);-webkit-user-select:none;user-select:none}
 .detail-toggle-left{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--text2);letter-spacing:.1em;text-transform:uppercase}
 .detail-arrow{font-size:9px;color:var(--text3);transition:transform .2s}
 .detail-arrow.open{transform:rotate(90deg)}
 .detail-body{overflow:hidden;transition:max-height .3s ease;max-height:0}
-
 .table-section{padding:10px}
 .tbl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .tbl-title{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:.12em;text-transform:uppercase}
@@ -117,29 +110,23 @@ tr.tr-click:active td{background:var(--bg2)}
 .td-gap-neg{color:var(--down);font-weight:600}
 .td-gap-zero{color:var(--text3)}
 .tag-delay{font-size:7px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:1px 3px;margin-left:3px;vertical-align:middle}
-
 .sess-strip{display:flex;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--border);background:var(--bg1)}
 .sess-strip::-webkit-scrollbar{display:none}
 .sess-cell{flex-shrink:0;padding:8px 12px;border-right:1px solid var(--border)}
 .sess-label{font-family:var(--mono);font-size:8px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .sess-val{font-family:var(--mono);font-size:10px;color:var(--text2)}
 .sess-val.active{color:var(--up)}.sess-val.inactive{color:var(--text3)}
-
 .err-box{background:rgba(255,51,68,.08);border-left:3px solid var(--down);padding:8px 12px;font-family:var(--mono);font-size:10px;color:var(--down);margin:8px 10px;display:none;line-height:1.5}
 .err-box.show{display:block}
-
 .bottom-bar{position:sticky;bottom:0;background:var(--bg);border-top:1px solid var(--border);padding:8px 14px calc(var(--safe-bottom) + 8px);display:flex;align-items:center;justify-content:space-between;gap:8px}
 .btn-row{display:flex;gap:6px}
 .btn{font-family:var(--mono);font-size:10px;color:var(--text2);background:var(--bg2);border:1px solid var(--border2);border-radius:3px;padding:5px 10px;cursor:pointer;transition:color .15s,background .15s}
 .btn:active{background:var(--bg3);color:var(--accent)}
 .auto-lbl{font-family:var(--mono);font-size:9px;color:var(--text3)}
-
 .disclaimer{padding:10px 14px;border-top:1px solid var(--border);font-family:var(--mono);font-size:9px;color:var(--text3);line-height:1.7;margin-bottom:60px}
 .disclaimer span{color:var(--warn)}
-
 .skel{background:linear-gradient(90deg,var(--bg2) 25%,var(--bg3) 50%,var(--bg2) 75%);background-size:200% 100%;animation:skel 1.4s infinite;border-radius:2px;display:block}
 @keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal{display:flex;flex-direction:column;height:100%;max-height:100dvh;background:var(--bg);transform:translateY(100%);transition:transform .25s cubic-bezier(.4,0,.2,1)}
@@ -263,7 +250,7 @@ canvas#priceChart{width:100%!important;height:100%!important}
 
 <div class="disclaimer">
   <span>⚠ 본 가격은 장외 참고용입니다.</span> 장 시작 시 가격 변동이 클 수 있습니다.<br>
-  KRX·미국 실제가는 Yahoo Finance 기준 15~20분 지연 데이터입니다.
+  KRX·미국 실제가는 Finnhub 기준 데이터입니다.
 </div>
 
 <div class="bottom-bar">
@@ -397,20 +384,16 @@ function showErr(msg){
   const el=document.getElementById('err-box');
   if(msg){el.textContent='⚠ '+msg;el.classList.add('show');}else el.classList.remove('show');
 }
-
 const fu=n=>!n?'—':'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const fk=u=>!fxRate||!u?'—':Math.round(u*fxRate).toLocaleString('ko-KR')+'원';
 const fd=k=>!k?'—':Math.round(k).toLocaleString('ko-KR')+'원';
 const pc=(c,p)=>(!c||!p)?null:(c-p)/p*100;
-
-/* ★ 전일 대비 등락률 — Yahoo Finance chgPct 우선 사용 */
 function tokenChg(sym){
   const kd=krxPrices[sym];
-  if(kd?.chgPct!=null) return kd.chgPct;
+  if(kd?.chgPct!=null)return kd.chgPct;
   const u=tokenPrices[sym],p=prevToken[sym];
   return(!u||!p)?null:(u-p)/p*100;
 }
-
 const cc=p=>p===null?'flat':p>0?'up':p<0?'down':'flat';
 const cs=p=>p===null?'—':(p>=0?'+':'')+p.toFixed(2)+'%';
 const ar=p=>p===null?'':p>0?'▲':p<0?'▼':'';
@@ -439,11 +422,20 @@ async function fetchAll(){
   try{
     const[mids,newFx,krx]=await Promise.all([fetchHL(),fetchFx(),fetchKRX()]);
     if(newFx)fxRate=newFx;
+
+    // ★ xyz: 접두사 제거 후 매핑
+    const midsClean={};
+    Object.keys(mids).forEach(k=>{
+      const clean=k.startsWith('xyz:')?k.slice(4):k;
+      midsClean[clean]=mids[k];
+    });
+
     const next={};
     ALL_TICKERS.forEach(t=>{
-      const v=mids[t.symbol]||mids['xyz:'+t.symbol];
+      const v=midsClean[t.symbol];
       if(v)next[t.symbol]=parseFloat(v);
     });
+
     ALL_TICKERS.forEach(t=>{
       const p=next[t.symbol],pp=tokenPrices[t.symbol];
       if(p&&pp&&p!==pp)flashCard('card-'+t.symbol,p-pp);
@@ -481,7 +473,7 @@ function renderCards(){
   const area=document.getElementById('cards');area.innerHTML='';
   visible().forEach(t=>{
     const tu=tokenPrices[t.symbol];
-    const tp=tokenChg(t.symbol);  /* ★ 전일 대비 */
+    const tp=tokenChg(t.symbol);
     const tcl=cc(tp);
     const kd=krxPrices[t.symbol],kp=kd?.price||null,kpc=kd?.chgPct||null,kcl=cc(kpc);
     const gap=calcGap(tu,kp,t.usd),gcl2=gc(gap);
@@ -511,7 +503,7 @@ function renderTable(){
   tbody.innerHTML='';
   list.forEach(t=>{
     const tu=tokenPrices[t.symbol];
-    const tp=tokenChg(t.symbol);  /* ★ 전일 대비 */
+    const tp=tokenChg(t.symbol);
     const tcl=cc(tp);
     const kd=krxPrices[t.symbol],kp=kd?.price||null,kpc=kd?.chgPct||null,kcl=cc(kpc);
     const gap=calcGap(tu,kp,t.usd),gcl2=gc(gap);
@@ -566,7 +558,7 @@ function openChart(sym){
 function updateModalPrice(sym){
   const t=ALL_TICKERS.find(x=>x.symbol===sym);
   const tu=tokenPrices[sym];
-  const tp=tokenChg(sym);  /* ★ 전일 대비 */
+  const tp=tokenChg(sym);
   const pe=document.getElementById('modal-price'),ke=document.getElementById('modal-price-krw'),ce=document.getElementById('modal-chg');
   if(pe)pe.textContent=fu(tu);
   if(ke)ke.textContent=t&&!t.usd?fk(tu):'';
@@ -655,4 +647,9 @@ function drawStats(data,sym){
     <div class="modal-stat"><div class="m-stat-label">고가</div><div class="m-stat-val up">${fmt(high)}</div></div>
     <div class="modal-stat"><div class="m-stat-label">저가</div><div class="m-stat-val down">${fmt(low)}</div></div>
     <div class="modal-stat"><div class="m-stat-label">시작가</div><div class="m-stat-val">${fmt(first)}</div></div>
-    <div class="modal-stat"><div class="m-stat-l
+    <div class="modal-stat"><div class="m-stat-label">포인트</div><div class="m-stat-val" style="font-size:10px">${pts.length}개</div></div>
+  `;
+}
+</script>
+</body>
+</html>
