@@ -391,9 +391,6 @@ let detOpen=false;
 
 /* ── INIT ── */
 (function(){
-  // 즉시 빈 카드 렌더링 (스켈레톤 없이 빠르게)
-  renderCards();
-  // 병렬로 데이터 fetch
   fetchAll();
   setInterval(tickClock, 1000);
   autoTimer = setInterval(fetchAll, INTERVAL);
