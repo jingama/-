@@ -432,24 +432,24 @@ function showErr(msg){
 }
 
 /* ── FORMAT ── */
-const fu=n=>!n?'—':'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-const fk=u=>!fx||!u?'—':Math.round(u*fx).toLocaleString('ko-KR')+'원';
-const fd=k=>!k?'—':Math.round(k).toLocaleString('ko-KR')+'원';
-const pct=(c,p)=>(!c||!p)?null:(c-p)/p*100;
+function fu(n){return !n?'—':'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fk(u){return !fx||!u?'—':Math.round(u*fx).toLocaleString('ko-KR')+'원';}
+function fd(k){return !k?'—':Math.round(k).toLocaleString('ko-KR')+'원';}
+function pct(c,p){return (!c||!p)?null:(c-p)/p*100;}
 function tokChg(s){
   const kd=realPx[s];
   if(kd?.chgPct!=null) return kd.chgPct;
   return pct(tokPx[s],prevTok[s]);
 }
-const cc=p=>p===null?'flat':p>0?'up':p<0?'down':'flat';
-const cs=p=>p===null?'—':(p>=0?'+':'')+p.toFixed(2)+'%';
-const ar=p=>p===null?'':p>0?'▲':p<0?'▼':'';
+function cc(p){return p===null?'flat':p>0?'up':p<0?'down':'flat';}
+function cs(p){return p===null?'—':(p>=0?'+':'')+p.toFixed(2)+'%';}
+function ar(p){return p===null?'':p>0?'▲':p<0?'▼':'';}
 function gap(tu,kp,usd){
   if(!tu||!kp||!fx)return null;
   return(tu*fx-(usd?kp*fx:kp))/(usd?kp*fx:kp)*100;
 }
-const gc=g=>g===null?'zero':g>0.5?'pos':g<-0.5?'neg':'zero';
-const gs=g=>g===null?'—':(g>=0?'+':'')+g.toFixed(2)+'%';
+function gc(g){return g===null?'zero':g>0.5?'pos':g<-0.5?'neg':'zero';}
+function gs(g){return g===null?'—':(g>=0?'+':'')+g.toFixed(2)+'%';}
 
 /* ── FETCH ── */
 async function fetchFx(){
