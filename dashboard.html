@@ -276,8 +276,8 @@ canvas#priceChart{width:100%!important;height:100%!important}
             <th style="text-align:right">토큰 USD</th>
             <th style="text-align:right">원화</th>
             <th style="text-align:right">등락</th>
-            <th style="text-align:right">실제가<span class="tag-d">지연</span></th>
-            <th style="text-align:right">실제등락</th>
+            <th style="text-align:right">주식가격<span class="tag-d">지연</span></th>
+            <th style="text-align:right">주식등락</th>
             <th style="text-align:right">괴리율</th>
           </tr>
         </thead>
@@ -544,10 +544,10 @@ function renderCards(){
       </div>
       <div class="c-name">${t.n}</div>
       <div class="c-prices">
-        <div class="c-prow"><span class="c-plbl">토큰</span><span class="c-pval tok">${fu(tu)}</span></div>
+        <div class="c-prow"><span class="c-plbl">토큰가격</span><span class="c-pval tok">${fu(tu)}</span></div>
         <div class="c-prow"><span class="c-plbl"></span><span class="c-pval krw">${fk(tu)}</span></div>
         <div class="c-prow" style="margin-top:4px">
-          <span class="c-plbl">${t.usd?'실제가':'KRX'}</span>
+          <span class="c-plbl">주식가격</span>
           <span class="c-pval krx">${t.usd?fu(kp):fd(kp)}</span>
         </div>
       </div>
